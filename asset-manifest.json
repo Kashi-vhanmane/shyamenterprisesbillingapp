@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shyamenterprisesbillingapp/static/css/main.64554f54.css",
-    "main.js": "/shyamenterprisesbillingapp/static/js/main.e0d3b202.js",
+    "main.js": "/shyamenterprisesbillingapp/static/js/main.17c4d87a.js",
     "static/js/239.3e0f2a51.chunk.js": "/shyamenterprisesbillingapp/static/js/239.3e0f2a51.chunk.js",
     "static/js/977.5b6c3a20.chunk.js": "/shyamenterprisesbillingapp/static/js/977.5b6c3a20.chunk.js",
     "static/js/455.b1437b2c.chunk.js": "/shyamenterprisesbillingapp/static/js/455.b1437b2c.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/logo.png": "/shyamenterprisesbillingapp/static/media/logo.3a33801aaedd11dbbfb8.png",
     "index.html": "/shyamenterprisesbillingapp/index.html",
     "main.64554f54.css.map": "/shyamenterprisesbillingapp/static/css/main.64554f54.css.map",
-    "main.e0d3b202.js.map": "/shyamenterprisesbillingapp/static/js/main.e0d3b202.js.map",
+    "main.17c4d87a.js.map": "/shyamenterprisesbillingapp/static/js/main.17c4d87a.js.map",
     "239.3e0f2a51.chunk.js.map": "/shyamenterprisesbillingapp/static/js/239.3e0f2a51.chunk.js.map",
     "977.5b6c3a20.chunk.js.map": "/shyamenterprisesbillingapp/static/js/977.5b6c3a20.chunk.js.map",
     "455.b1437b2c.chunk.js.map": "/shyamenterprisesbillingapp/static/js/455.b1437b2c.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.64554f54.css",
-    "static/js/main.e0d3b202.js"
+    "static/js/main.17c4d87a.js"
   ]
 }
