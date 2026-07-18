@@ -10,8 +10,8 @@ export default function ProductTable({
     const product = {
       id: Date.now(),
       name: "",
-      price: 0,
-      qty: 1,
+      price: "",
+      qty: "",
       total: 0
     };
 
@@ -32,13 +32,19 @@ export default function ProductTable({
     updated[index][field] = value;
 
     updated[index].total =
-      updated[index].price *
-      updated[index].qty;
+      (Number(
+        updated[index].price
+      ) || 0) *
+      (Number(
+        updated[index].qty
+      ) || 0);
 
     setProducts(updated);
   };
 
-  const deleteProduct = (id) => {
+  const deleteProduct = (
+    id
+  ) => {
 
     setProducts(
       products.filter(
@@ -48,14 +54,17 @@ export default function ProductTable({
   };
 
   return (
+
     <div className="card mb-3">
 
-      <div className="card-header d-flex justify-content-between">
+      <div className="card-header d-flex justify-content-between align-items-center">
 
-        <span>Products</span>
+        <h5 className="mb-0">
+          Products
+        </h5>
 
         <button
-          className="btn btn-success btn-sm"
+          className="btn btn-success"
           onClick={addProduct}
         >
           Add Product
@@ -65,33 +74,81 @@ export default function ProductTable({
 
       <div className="card-body">
 
-        <table className="table">
+        <table className="table table-bordered align-middle">
 
-          <thead>
+          <thead className="table-light">
+
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Total</th>
-              <th>Action</th>
+              <th width="60">
+                ID
+              </th>
+
+              <th>
+                Product Name
+              </th>
+
+              <th width="150">
+                Price
+              </th>
+
+              <th width="150">
+                Qty
+              </th>
+
+              <th width="150">
+                Total
+              </th>
+
+              <th width="120">
+                Action
+              </th>
             </tr>
+
           </thead>
 
           <tbody>
 
+            {products.length === 0 && (
+
+              <tr>
+
+                <td
+                  colSpan="6"
+                  className="text-center text-muted"
+                >
+                  No Products Added
+                </td>
+
+              </tr>
+
+            )}
+
             {products.map(
-              (product, index) => (
+              (
+                product,
+                index
+              ) => (
 
-                <tr key={product.id}>
-
-                  <td>{index + 1}</td>
+                <tr
+                  key={product.id}
+                >
 
                   <td>
+                    {index + 1}
+                  </td>
+
+                  <td>
+
                     <input
+                      type="text"
                       className="form-control"
-                      value={product.name}
-                      onChange={(e) =>
+                      placeholder="Enter Product Name"
+                      value={
+                        product.name
+                      }
+                      onChange={(
+                        e
+                      ) =>
                         updateProduct(
                           index,
                           "name",
@@ -99,47 +156,74 @@ export default function ProductTable({
                         )
                       }
                     />
+
                   </td>
 
                   <td>
+
                     <input
                       type="number"
                       className="form-control"
-                      value={product.price}
-                      onChange={(e) =>
+                      placeholder="Price"
+                      value={
+                        product.price
+                      }
+                      onChange={(
+                        e
+                      ) =>
                         updateProduct(
                           index,
                           "price",
-                          Number(
-                            e.target.value
-                          )
+                          e.target.value ===
+                            ""
+                            ? ""
+                            : Number(
+                                e.target.value
+                              )
                         )
                       }
                     />
+
                   </td>
 
                   <td>
+
                     <input
                       type="number"
                       className="form-control"
-                      value={product.qty}
-                      onChange={(e) =>
+                      placeholder="Qty"
+                      value={
+                        product.qty
+                      }
+                      onChange={(
+                        e
+                      ) =>
                         updateProduct(
                           index,
                           "qty",
-                          Number(
-                            e.target.value
-                          )
+                          e.target.value ===
+                            ""
+                            ? ""
+                            : Number(
+                                e.target.value
+                              )
                         )
                       }
                     />
+
                   </td>
 
                   <td>
-                    ₹{product.total}
+
+                    {product.total >
+                    0
+                      ? `₹${product.total}`
+                      : ""}
+
                   </td>
 
                   <td>
+
                     <button
                       className="btn btn-danger btn-sm"
                       onClick={() =>
@@ -150,9 +234,11 @@ export default function ProductTable({
                     >
                       Delete
                     </button>
+
                   </td>
 
                 </tr>
+
               )
             )}
 

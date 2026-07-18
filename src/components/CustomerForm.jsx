@@ -8,12 +8,26 @@ export default function CustomerForm({
   return (
 
     <div className="card mb-3">
-
+    <div>
+        <input
+  className="form-control mb-3"
+  placeholder="Invoice Number"
+  value={customer.invoiceNo}
+  onChange={(e) =>
+    setCustomer({
+      ...customer,
+      invoiceNo: e.target.value
+    })
+  }
+/>
+      </div>
       <div className="card-header">
         Customer Details
       </div>
+  
 
       <div className="card-body">
+        
 
         <input
           className="form-control mb-2"

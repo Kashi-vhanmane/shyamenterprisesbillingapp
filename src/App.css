@@ -52,3 +52,25 @@ body {
 h2 {
   font-weight: bold;
 }
+
+@font-face {
+  font-family: "MarathiFont";
+  src: url("./assets/fonts/NotoSansDevanagari-Regular.ttf")
+    format("truetype");
+}
+
+.invoice-preview {
+  font-family: "MarathiFont";
+  background: white;
+  padding: 20px;
+  color: black;
+}
+/* 
+@font-face {
+  font-family: 'MarathiFont';
+  src: url('./assets/fonts/NotoSansDevanagari-Regular.ttf') format('truetype');
+}
+
+.invoice-preview {
+  font-family: 'MarathiFont';
+} */

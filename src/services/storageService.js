@@ -3,7 +3,7 @@ export const getBills = () => {
     localStorage.getItem("bills")
   ) || [];
 };
-
+   
 export const saveBill = (bill) => {
   const bills = getBills();
 
